@@ -1,3 +1,5 @@
+/* need to fix the background peeping through when browser resizes */
+
 html {
   box-sizing: border-box;
 }
