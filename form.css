@@ -60,3 +60,10 @@ a {
 .flex-form > *:last-child {
   border-right: 0;
 }
+
+/* FLEXBOX STARTS HERE */
+.cover {
+  display: flex; /* doesn't do much, form is the only element inside of it*/
+  justify-content: center;
+  align-items: center;
+}
