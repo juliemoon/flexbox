@@ -20,12 +20,11 @@ a {
 .cover  {
   height:100vh;
   width:100%;
-  position: relative; /*position is required to use z-index*/
-  z-index: 9;
 }
 
 .heaven {
   height:100%;
+  width: 100%;
   /* -webkit-filter:blur(5px);
   filter:blur(5px); */
   position: absolute;
@@ -71,5 +70,14 @@ a {
 /* take the only child container inside of FLEX CONTAINER and change this to flex container also */
 .flex-form {
   /* takes all the items inside of <form> and stretches it and aligns it next to each other */
+  z-index: 10;
+  position: relative;
   display: flex;
+  margin-bottom: 150px;
+  border: 10px solid rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+input[type=search]{
+  flex-basis: 500px;
 }
