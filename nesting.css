@@ -12,15 +12,19 @@ body {
   background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
 }
 
-.wrapper{
-  max-width:1000px;
+.wrapper {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 50px;
+  padding:50px;
 }
 
-.img{
-  max-width:100%;
+img {
+  width:100%;
 }
+/* 
+img{
+  max-width:100%;
+} */
 
 a {
   color:white;
@@ -35,8 +39,55 @@ a:hover {
   background:rgba(0,0,0,0.4);
 }
 
+/* =================================================================================================
+we are going to make the parent container flex and then continue to make subsequent child "flex-items"  the parent container. This makes the child elements the flex containers and flex item. Remember some 
+flex properties can only be placed on child elements. BUT once the <a> tags become flex containers, 
+we need to wrap the content in something <span> to make it flex containers to manipulate. Can't 
+manipulate just text!
+ * =================================================================================================/
+
+/* ul is the flex container */
 .slider-nav ul {
   list-style: none;
   margin: 0;
   padding: 0; 
+  display:flex;
+}
+
+/* our first flex item */
+.slider-nav li {
+  /* looks wonky but it's really the links <a> that's causing the problem */
+  flex: 2;
+  /* text-align: center; */
+  /* border: 1px solid red; */
+  /*
+  setting the li as flex containers means all the anchor texts will be flex-items
+  fixes the need for the greyscale background to stretch all the way down
+  */
+  display: flex; /* making the flex item a parent container*/
+}
+
+.slider-nav .arrow {
+  flex: 1;
+}
+
+.slider-nav .arrow a {
+  font-size: 40px;
+}
+
+/* Flex container and child! Needs another element to act as child container */
+.slider-nav a {
+  flex-basis: 100%;
+  display:flex;
+  align-items: center;
+  padding:20px 5px;
+  /* display: block;
+  width:100%; */
+}
+
+.slider-nav span {
+  /* change display to block because span's default value is inline */
+  display: block;
+  flex:1;
+  text-align: center;
 }
