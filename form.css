@@ -67,3 +67,9 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+/* take the only child container inside of FLEX CONTAINER and change this to flex container also */
+.flex-form {
+  /* takes all the items inside of <form> and stretches it and aligns it next to each other */
+  display: flex;
+}
