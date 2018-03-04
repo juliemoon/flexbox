@@ -1,0 +1,98 @@
+html{
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #defca7;
+  /* #4d06bd */
+}
+
+a {
+  color: #965a76;
+  text-decoration: none;
+}
+
+.plan ul {
+  list-style: none;
+  margin:0;
+  padding: 0;
+}
+
+/* grabs all the li tags inside of the ul */
+.plan ul li {
+  border-bottom: 1px solid #965a76;
+  /* border-bottom: 1px solid rgba(0,0,0,0.1); */
+  padding:10px;
+}
+
+.plan ul li:last-child {
+  border-bottom: none;
+}
+
+.plan a {
+  background:  #965a76;
+  color:#defca7;
+  padding:15px;
+  border-radius:2px;
+}
+
+.plan h2 {
+  text-transform: uppercase;
+  color:#965a76;
+  letter-spacing: 2px;
+  text-shadow:1px 1px 0 rgba(0,0,0,0.1);
+}
+
+.price {
+  font-size: 50px;
+  font-family: sans-serif;
+  margin: 10px 0;
+  color:#965a76;
+}
+
+/* .pricing-grid {
+  max-width:750px;
+  margin: 0 auto;
+  
+} */
+
+/* FLEX CONTAINER */
+.pricing-grid {
+  max-width: 750px;
+  /* centers the content */
+  margin: 0 auto;
+  display: flex;
+}
+
+/* ===================================================================================================
+SET EACH GRID TO BE EQUAL WIDTH 
+PLAN IS FLEX-ITEM, but make it FLEX-CONTAINER as well so we can use align-self to make the buttons 
+align at the end of the page.
+===================================================================================================*/
+.plan {
+  flex: 1;
+  margin:20px;
+  padding:20px;
+  background: rgba(172,168,168,0.1);
+  text-align:center;
+  border-radius: 4px;  
+  /* nesting flex box item to container  */
+  display: flex;
+  /* use flex-wrap to make columns align vertically since it's a nested container */
+  flex-wrap: wrap;
+}
+
+/* need to take all the new flex container's items */
+.plan > * {
+  flex: 1 1 100%; /* making flex basis 100% is key  because it needs a width!! */
+}
+
+.plan .cta{
+  align-self: flex-end;
+}
